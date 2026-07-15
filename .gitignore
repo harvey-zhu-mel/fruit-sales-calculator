@@ -1,3 +1,5 @@
 global.json
 /src/FruitSalesCalculator/obj
 /tests/FruitSalesCalculator.Tests/obj
+/src/FruitSalesCalculator/bin
+/tests/FruitSalesCalculator.Tests/bin
