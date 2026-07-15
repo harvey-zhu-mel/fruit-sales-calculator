@@ -8,12 +8,12 @@ public sealed class PerItemPricingStrategy : IPricingStrategy
 
     public PriceCalculation Calculate(decimal basePrice, decimal amount)
     {
-        if (basePrice < 0)
+        if (basePrice <= 0)
         {
             throw new ArgumentOutOfRangeException(nameof(basePrice), "Base price must be greater than zero.");
         }
 
-        if (amount < 0)
+        if (amount <= 0)
         {
             throw new ArgumentOutOfRangeException(nameof(amount), "Amount must be greater than zero.");
         }
