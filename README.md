@@ -1,5 +1,7 @@
 # Fruit Sales Calculator
 
+[![CI](https://github.com/harvey-zhu-mel/fruit-sales-calculator/actions/workflows/ci.yml/badge.svg)](https://github.com/harvey-zhu-mel/fruit-sales-calculator/actions/workflows/ci.yml)
+
 A small C#/.NET 8 console application that calculates the total price of mixed fruit orders.
 
 It supports:
