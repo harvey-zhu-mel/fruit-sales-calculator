@@ -5,7 +5,7 @@ public sealed class OrderLine
     public Fruit Fruit { get; }
     public decimal Amount { get; }
 
-    public PriceCalculation PriceCalculation { get; }
+    public PriceCalculation Price { get; }
     
     public OrderLine(Fruit fruit, decimal amount)
     {

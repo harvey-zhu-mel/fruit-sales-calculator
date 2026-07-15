@@ -14,7 +14,12 @@ public sealed class Order
 
     public decimal CalculateTotal()
     {
-        return _lines.Sum(line => line.PriceCalculation.Total);
+        var total = _lines.Sum(line => line.Price.Total);
+        return decimal.Round(
+            total,
+            decimals: 2,
+            mode: MidpointRounding.AwayFromZero);
     }
    
+
 }
