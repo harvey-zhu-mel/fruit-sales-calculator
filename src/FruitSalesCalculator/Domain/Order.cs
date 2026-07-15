@@ -7,9 +7,29 @@ public sealed class Order
 
     public OrderLine AddLine(Fruit fruit, decimal amount)
     {
-        var line = new OrderLine(fruit, amount);
-        _lines.Add(line);
-        return line;
+        ArgumentNullException.ThrowIfNull(fruit);
+
+        var existingIndex = _lines.FindIndex(line =>
+            string.Equals(
+                line.Fruit.Name,
+                fruit.Name,
+                StringComparison.OrdinalIgnoreCase));
+
+        if (existingIndex >= 0)
+        {
+            var consolidatedLine = new OrderLine(
+                fruit,
+                _lines[existingIndex].Amount + amount);
+
+            _lines[existingIndex] = consolidatedLine;
+
+            return consolidatedLine;
+        }
+
+        var newLine = new OrderLine(fruit, amount);
+        _lines.Add(newLine);
+
+        return newLine;
     }
 
     public decimal CalculateTotal()
