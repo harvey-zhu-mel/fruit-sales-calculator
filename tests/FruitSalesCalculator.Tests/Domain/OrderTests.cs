@@ -116,4 +116,24 @@ public sealed class OrderTests
         Assert.Equal(0m, line.Price.Discount);
         Assert.Equal(10.00m, line.Price.Total);
     }
+
+    [Fact]
+    public void AddLine_rejects_negative_amount_for_existing_fruit()
+    {
+        // Arrange
+        var apple = new Fruit(
+            name: "Apple",
+            basePrice: 2.00m,
+            pricingMethod: PricingMethod.PerKilogram,
+            pricingStrategy: new PerKilogramPricingStrategy());
+
+        var order = new Order();
+        order.AddLine(apple, 2m);
+
+        // Act
+        var action = () => order.AddLine(apple, -1m);
+
+        // Assert
+        Assert.Throws<ArgumentOutOfRangeException>(action);
+    }
 }

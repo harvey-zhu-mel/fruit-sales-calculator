@@ -9,6 +9,13 @@ public sealed class Order
     {
         ArgumentNullException.ThrowIfNull(fruit);
 
+        if (amount <= 0)
+        {
+            throw new ArgumentOutOfRangeException(
+                nameof(amount),
+                "Amount must be greater than zero.");
+        }
+        
         var existingIndex = _lines.FindIndex(line =>
             string.Equals(
                 line.Fruit.Name,
