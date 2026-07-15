@@ -1,0 +1,23 @@
+{
+  "fruits": [
+    {
+      "name": "Apple",
+      "basePrice": 2.00,
+      "pricingMethod": "PerKilogram"
+    },
+    {
+      "name": "Banana",
+      "basePrice": 0.30,
+      "pricingMethod": "PerItem"
+    },
+    {
+      "name": "Cherry",
+      "basePrice": 5.00,
+      "pricingMethod": "PerKilogram",
+      "thresholdDiscount": {
+        "threshold": 2.00,
+        "percentage": 10.00
+      }
+    }
+  ]
+}
