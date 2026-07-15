@@ -20,7 +20,7 @@ public sealed class PerItemPricingStrategy : IPricingStrategy
 
         if (amount != decimal.Truncate(amount))
         {
-            throw new ArgumentException(
+            throw new ArgumentOutOfRangeException(
                 "Item quantity must be a whole number.",
                 nameof(amount));
         }

@@ -33,7 +33,7 @@ public sealed class PerItemPricingStrategyTests
             amount: 2.50m);
 
         // Assert
-        Assert.Throws<ArgumentException>(
+        Assert.Throws<ArgumentOutOfRangeException>(
             action);
     }
 
