@@ -335,6 +335,15 @@ For example, pricing per box:
 
 The order workflow does not change.
 
+### Bulk discount
+
+The existing `ThresholdDiscountPricingStrategy` supports a percentage discount when a fruit quantity or weight exceeds a configured threshold.
+
+Apply it to another fruit by adding `thresholdDiscount` to that fruit in `fruits.json`. No C# change is required.
+
+A different bulk-pricing model, such as a fixed-dollar discount, reduced unit price, or tiered pricing, would require a new `IPricingStrategy` implementation and focused tests.
+
+
 ### Seasonal discount
 
 Add a decorator that wraps an existing strategy and evaluates an effective date.
