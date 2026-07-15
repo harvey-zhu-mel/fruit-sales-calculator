@@ -21,5 +21,6 @@ public sealed class OrderLine
 
         Fruit = fruit;
         Amount = amount;
+        Price = fruit.CalculatePrice(amount);
     }
 }
