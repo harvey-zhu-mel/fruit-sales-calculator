@@ -20,7 +20,7 @@ public sealed class Fruit
             throw new ArgumentException("Fruit name cannot be null or whitespace.", nameof(name));
         }
 
-        if(basePrice < 0)
+        if(basePrice <= 0)
         {
             throw new ArgumentOutOfRangeException(nameof(basePrice), "Base price cannot be negative or zero.");
         }
