@@ -8,7 +8,9 @@ public sealed class ThresholdDiscountPricingStrategy : IPricingStrategy
     private readonly decimal _threshold;
     private readonly decimal _percentage;
 
-     public string Description => $"{_percentage:0.##}% discount applied above {_threshold:0.##}";
+    public string Description =>
+    $"{_innerStrategy.Description} with " +
+    $"{_percentage:0.##}% discount above {_threshold:0.##}";
 
     public ThresholdDiscountPricingStrategy(
         IPricingStrategy innerStrategy,
