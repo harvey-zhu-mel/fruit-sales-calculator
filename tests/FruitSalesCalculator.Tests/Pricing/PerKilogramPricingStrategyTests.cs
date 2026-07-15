@@ -36,4 +36,20 @@ public sealed class PerKilogramPricingStrategyTests
         Assert.Throws<ArgumentOutOfRangeException>(
             action);
     }
+
+     [Fact]
+    public void Calculate_rejects_zero_base_price()
+    {
+        // Arrange
+        var strategy = new PerKilogramPricingStrategy();
+
+        // Act
+        var action = () => strategy.Calculate(
+            basePrice: 0m,
+            amount: 1.50m);
+
+        // Assert
+        Assert.Throws<ArgumentOutOfRangeException>(
+            action);
+    }
 }
